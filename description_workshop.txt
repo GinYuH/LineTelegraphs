@@ -1,0 +1,8 @@
+Have you ever seen an enemy shoot a slow moving projectile at you and wonder "man, I wish this were more reactable!", well this mod is for you!
+
+While enabled, all enemies and their projectiles will have a screen-sized line telegraph showcasing the direction they are currently moving, giving you plenty of time to move out of the way of the line and dodge! A no-hitter's best friend!
+
+Comes with options to enable this effect for friendly NPCs/projectiles, use one color for all telegraphs, and adjust line length.
+
+
+Note: When loading into worlds, the game will need to take time to load all of the telegraph colors, do not panic if the game freezes. Enabling red/yellow telegraphs will disable custom colors but remove this freeze if you can't bear with it.
