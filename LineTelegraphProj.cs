@@ -38,7 +38,9 @@ namespace LineTelegraphs
                             for (int j = 0; j < colors.GetLength(1); j++)
                             {
                                 Color thing = colors[g, j];
-                                if ((thing.R + thing.G + thing.B) > 255f)
+                                    if (colorList.Contains(thing))
+                                        continue;
+                                    if ((thing.R + thing.G + thing.B) > 255f)
                                 {
                                     colorList.Add(thing);
                                 }
@@ -60,7 +62,7 @@ namespace LineTelegraphs
                     if (ContentSamples.NpcsByNetId.ContainsKey(i))
                     {
                         NPC p = ContentSamples.NpcsByNetId[i];
-                        if (p.friendly)
+                        if (p.friendly || p.CountsAsACritter)
                             continue;
                         Main.instance.LoadNPC(i);
 
@@ -72,6 +74,8 @@ namespace LineTelegraphs
                             for (int j = 0; j < colors.GetLength(1); j++)
                             {
                                 Color thing = colors[g, j];
+                                    if (colorList.Contains(thing))
+                                        continue;
                                 if ((thing.R + thing.G + thing.B) > 255f)
                                 {
                                     colorList.Add(thing);
@@ -125,7 +129,7 @@ namespace LineTelegraphs
                             }
                 float length = LineConfig.Instance.ProjLineLength;
                 Vector2 endPoint = projectile.Center + projectile.velocity.SafeNormalize(Vector2.UnitY) * length;
-                Utils.DrawLine(Main.spriteBatch, projectile.Center, endPoint, final, final * 0.4f, 4);
+                Utils.DrawLine(Main.spriteBatch, projectile.Center, endPoint, final, final * 0.4f, LineConfig.Instance.ProjLineWidth);
             }
             return true;
         }
@@ -135,7 +139,7 @@ namespace LineTelegraphs
     {
         public override bool PreDraw(NPC npc, SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
-            if (npc.friendly && !LineConfig.Instance.showFriendNPC)
+            if ((npc.friendly || npc.CountsAsACritter) && !LineConfig.Instance.showFriendNPC)
                 return true;
             if (npc.velocity != Vector2.Zero && LineConfig.Instance.showEnemy)
             {
@@ -149,7 +153,7 @@ namespace LineTelegraphs
                             }
                 float length = LineConfig.Instance.NPCLineLength;
                 Vector2 endPoint = npc.Center + npc.velocity.SafeNormalize(Vector2.UnitY) * length;
-                Utils.DrawLine(spriteBatch, npc.Center, endPoint, final, final * 0.4f, 4);
+                Utils.DrawLine(spriteBatch, npc.Center, endPoint, final, final * 0.4f, LineConfig.Instance.NPCLineWidth);
             }
             return true;
         }

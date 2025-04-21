@@ -1,0 +1,66 @@
+Configs: {
+	LineConfig: {
+		DisplayName: Line Telegraph Config
+
+		showEnemy: {
+			Label: Hostile NPC Line Telegraphs
+			Tooltip: Hostile NPCs (enemies/bosses) that deal contact damage show line telegraphs when moving while enabled
+		}
+
+		showFriendNPC: {
+			Label: Universal NPC Line Telegraphs
+			Tooltip: All NPCs regardless of danger have line telegraphs
+		}
+
+		allRedNPC: {
+			Label: Red NPC Telegraphs
+			Tooltip:
+				'''
+				While enabled, NPCs will all use a red line telegraph instead of one of the NPC's colors.
+				Disabling this and the Yellow Projectile Telegraphs option removes the lag spike when entering worlds
+				'''
+		}
+
+		NPCLineLength: {
+			Label: NPC Line Length
+			Tooltip: Controls how long the NPC line telegraph is in pixels (1 tile is 16 pixels)
+		}
+
+		showProj: {
+			Label: Hostile Projectile Line Telegraphs
+			Tooltip: Hostile Projectiles show line telegraphs when moving while enabled
+		}
+
+		showFriendProj: {
+			Label: Universal Projectile Line Telegraphs
+			Tooltip: All Projectiles have line telegraphs, including your own
+		}
+
+		allRedProj: {
+			Label: Yellow Projectile Telegraphs
+			Tooltip:
+				'''
+				While enabled, Projectiles  will all use a yellow line telegraph instead of one of the Projectile's colors.
+				Disabling this and the Red NPCs Telegraphs option removes the lag spike when entering worlds
+				'''
+		}
+
+		ProjLineLength: {
+			Label: Projectile Line Length
+			Tooltip: Controls how long the Projectile line telegraph is in pixels (1 tile is 16 pixels)
+		}
+
+		NPCLineWidth: {
+			Label: NPC Line Width
+			Tooltip: Controls how long the NPC line telegraph is in pixels (1 tile is 16 pixels)
+		}
+
+		ProjLineWidth: {
+			Label: Projectile Line Width
+			Tooltip: Controls how long the Projectile line telegraph is in pixels (1 tile is 16 pixels)
+		}
+	}
+
+	NPCHeader: NPCs
+	ProjectileHeader: Projectiles
+}

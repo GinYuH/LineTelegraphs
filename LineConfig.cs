@@ -25,7 +25,12 @@ namespace LineTelegraphs
 
         [DefaultValue(2600)]
         [Range(100, 10000)]
-        public float NPCLineLength { get; set; }
+        public int NPCLineLength { get; set; }
+
+
+        [DefaultValue(4)]
+        [Range(1, 100)]
+        public int NPCLineWidth { get; set; }
 
 
         /// Projectiles
@@ -45,7 +50,12 @@ namespace LineTelegraphs
 
         [DefaultValue(2600)]
         [Range(100, 10000)]
-        public float ProjLineLength { get; set; }
+        public int ProjLineLength { get; set; }
+
+
+        [DefaultValue(4)]
+        [Range(1, 100)]
+        public int ProjLineWidth { get; set; }
 
     }
 }

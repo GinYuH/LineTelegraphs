@@ -1,3 +1,3 @@
 displayName = Everything has Line Telegraphs
 author = YuH
-version = 1.0
+version = 1.0.2
